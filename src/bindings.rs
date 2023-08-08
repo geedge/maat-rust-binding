@@ -31,10 +31,11 @@ impl<T> ::std::fmt::Debug for __IncompleteArrayField<T> {
     }
 }
 
-pub type UChar = ::std::os::raw::c_uchar;
-pub type UShort = ::std::os::raw::c_ushort;
-pub type UInt = ::std::os::raw::c_uint;
-pub type ULong = ::std::os::raw::c_ulong;
+pub type CUchar = ::std::os::raw::c_uchar;
+pub type CUShort = ::std::os::raw::c_ushort;
+pub type CUInt = ::std::os::raw::c_uint;
+pub type CULong = ::std::os::raw::c_ulong;
+pub type CLongLong = ::std::os::raw::c_longlong;
 
 extern "C" {
     pub fn ntohl(__netlong: u32) -> u32;
@@ -79,7 +80,7 @@ fn bindgen_test_layout_maat_hit_path() {
         concat!("Alignment of ", stringify!(maat_hit_path))
     );
     assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).Nth_scan) as usize - ptr as usize },
+        unsafe { ::std::ptr::addr_of!((*ptr).nth_scan) as usize - ptr as usize },
         0usize,
         concat!(
             "Offset of field: ",
